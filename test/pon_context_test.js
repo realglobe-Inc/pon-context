@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const ponContext = require('../lib/pon_context.js')
-const assert = require('assert')
+const PonContext = require('../lib/pon_context.js')
+const { ok } = require('assert')
 const co = require('co')
 
 describe('pon-context', function () {
@@ -20,7 +20,10 @@ describe('pon-context', function () {
   }))
 
   it('Pon context', () => co(function * () {
-
+    let ctx = new PonContext()
+    ok(ctx.id)
+    ok(ctx.timer)
+    ok(ctx.logger)
   }))
 })
 
