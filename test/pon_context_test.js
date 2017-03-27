@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const ponContext = require('../lib/pon_context.js')
+const PonContext = require('../lib/pon_context.js')
 const assert = require('assert')
 const co = require('co')
 

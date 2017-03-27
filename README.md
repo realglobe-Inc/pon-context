@@ -80,7 +80,9 @@ Usage
 const ponContext = require('pon-context')
 
 async function myCustomPonTask (ctx) {
+  let { logger } = ctx
 
+  logger.debug('Do some custom staff')
 }
 
 {
@@ -116,7 +118,7 @@ API Guide
 
 License
 -------
-This software is released under the [MIT License](https://github.com/realglobe-Inc/pon-context/blob/master/LICENSE).
+This software is released under the [Apache-2.0 License](https://github.com/realglobe-Inc/pon-context/blob/master/LICENSE).
 
 <!-- LICENSE End -->
 
