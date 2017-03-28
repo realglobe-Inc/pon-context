@@ -20,10 +20,12 @@ describe('pon-context', function () {
   }))
 
   it('Pon context', () => co(function * () {
-    let ctx = new PonContext()
-    ok(ctx.id)
-    ok(ctx.timer)
-    ok(ctx.logger)
+    let { id, timer, logger } = new PonContext()
+    ok(id)
+    ok(timer)
+    ok(logger)
+    timer.tick()
+    logger.debug('hoge')
   }))
 })
 
