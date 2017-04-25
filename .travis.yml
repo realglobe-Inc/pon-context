@@ -2,13 +2,9 @@ language: node_js
 node_js:
 - '6'
 before_install:
-# TODO OSS
-# - npm i npm-cli-login -g
-# - npm-cli-login -u "${NPM_USER}" -p "${NPM_PASSWORD}" -e "${NPM_EMAIL}"
-# - npm who
-- echo "registry = https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual" > $HOME/.npmrc
-- curl -u${NPM_USER}:${NPM_PASSWORD} "https://realglobe.artifactoryonline.com/realglobe/api/npm/auth" >> $HOME/.npmrc
-- cat $HOME/.npmrc
+ - npm i npm-cli-login -g
+ - npm-cli-login -u "${NPM_USER}" -p "${NPM_PASSWORD}" -e "${NPM_EMAIL}"
+ - npm who
 install:
 - npm install jsdoc -g
 - npm install
@@ -20,4 +16,4 @@ script:
 after_success:
 - ./ci/travis/publish.js
 env:
-  secure: "eVnoujTiD2mwRNUBNFRyJhaj8zLcivDKapSwWMCzd4biztfuI4DluQInjkiS5fg6zBarqq1ejH0FKCH0UNCikHa35h+IMHKOT1hlP1Kuz4yXTdKN7LblHMFipBjJQBVbPR3f4ZgJPY29+6GwSDu+AFnFytBMy5nB90sslTa4jhKum92IbZ0rmA3pWGTRk2heIIFTWgesxQWvrFNjusrWYON+tcMNEWae71OcIJnqD60PoPDlUN6VUc7Ng/DmjSkQEcR5csZTuiScsVNADTf1uzNB6d1nbob7nFmGbE7VYgVDJjr9/r6YIOwS0vgi+XkqqXqYE2yxVFLvWYfeM+pIlDwT3JQ9EP/zXvojGPWp1sCDuCi8A27ulvxP9Nd9SdAZoLaGSvjwQkK6+yveJp2ahYdpGjYAMQ4JbvW6Dvjq2d9okHom1DSP9Dv0JwTAY6UfrlIGBzToqZXZKpG66FN/5TF0Qj9+cxBmLSio0zWacMbl5/XYAoCJCJKke1V5e/DC7fmE74l+W+HVZSTxRamp4Z4aPiVWnPSk1Vh4+m1x2m2ME2k+3ebqc5+D5R4UPvQlg2gyYVH8QQW6nvrq2yHgAoxGHmeD0YDwxWzlhKLFXlHq8K1iuUOSGUkcamKrebZ/8uBsDo+T1TqBDg0hCTpG34x8RS2l0b5MYZ6pbqrS4yA="
+  secure: "F0mVEy5M69A9Ewm3+M+9Jwj8cJO8BKxLv+am/+HGrBYqxEjgcC4seEXOb6sT7a4r5sVCSJiSknWHhm5fWJJMDfVoP8mNvwYXXda3YAPi5ah8hVVrLXP0DGukLDHWeCp41IKysvZmPCL2Fv1FEXBK4U4xLime575jMzLhvnaSQVztE5suSr3g8dgSuRIguPxBYKCDuLI42bzKr57iRuALbi2jkC4OSPjV3K64XLcmbVT7D2WU0ue8yed8w7Ihew0Z3kjKYU4Kd+odMyC0Qk2oq/1nQzB1MDg9JoMW2J5TkdXZtDE9KC1HWbBwV3kN9D1LpQFnPBgUMR3w/CBfz3zbobnxoaO+mn0Oypzeom0bKe58BO9s7pqMMz5coEGakx9fWVePtGjfu8Nff6yIOX+O56PjFltoWTWbPbdY0Rdq7kF4IucUPDFooAtOql4ksDxMangTSGQxf1rcGHNWJXeu0nFMlafrWBsSgmAmbgCpsxKa9WV8GbkAjEHBAwdpCCIPlBEsqdKjnR1tHfWMFZ1e/FM44kVw/4JPsMlxOTs5Dd5oxD+Qh6DBmGVJc7A0s6WSEVDJmNjNFbZYuxAH02zgY5uwZ70VD2CBO91/ZED5ELzHsKoM9MhIwE+dASpVfZHLeguqXrHCbXHB7Hji8Lh21JGfMedON6D5QficqxYgI9Y="
