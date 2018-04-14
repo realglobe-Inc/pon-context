@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/realglobe-Inc/pon-context#readme",
   "dependencies": {
-    "pon-logger": "^2.0.2",
+    "pon-logger": "^2.0.3",
     "pon-timer": "^2.0.1",
     "pon-watcher": "^2.0.1",
     "pon-writer": "^1.0.4",
