@@ -4,6 +4,7 @@
   "description": "Tasks context for pon",
   "main": "lib",
   "scripts": {
+    "preversion": "./ci/build.js",
     "test": "node ./ci/test.js",
     "prepare": "node ./ci/build.js && node ./ci/shim.js && node ./ci/doc.js && node ./ci/assets.js"
   },
@@ -23,25 +24,24 @@
   "homepage": "https://github.com/realglobe-Inc/pon-context#readme",
   "dependencies": {
     "pon-logger": "^2.0.3",
-    "pon-timer": "^2.0.1",
+    "pon-timer": "^2.0.3",
     "pon-watcher": "^2.0.1",
     "pon-writer": "^1.0.4",
     "uuid": "^3.0.1"
   },
   "devDependencies": {
-    "ababel": "^4.0.8",
+    "ababel": "^4.0.9",
     "amocha": "^5.0.0",
     "ape-formatting": "^1.0.2",
     "ape-releasing": "^4.0.4",
     "ape-tasking": "^4.0.9",
     "ape-tmpl": "^6.0.10",
-    "ape-updating": "^4.1.0",
-    "coz": "^7.0.1",
+    "ape-updating": "^5.0.1",
+    "coz": "^7.0.2",
     "filecopy": "^4.0.1",
     "injectmock": "^2.0.0",
     "pon-assets": "^1.1.5",
-    "sg-templates": "^1.4.4",
-    "sugos-travis": "^2.0.7"
+    "sg-templates": "^1.4.4"
   },
   "engines": {
     "node": ">=8",
