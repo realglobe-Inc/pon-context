@@ -1,16 +1,19 @@
 language: node_js
 node_js:
 - '8'
+before_install:
+- echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+- cat .npmrc
+- npm install jsdoc publish-if-needed npm@latest -g
 install:
-- npm install jsdoc -g
 - npm install
 script:
 - "./ci/build.js"
 - "./ci/shim.js"
 - "./ci/doc.js"
 - "./ci/test.js"
-deploy:
-  provider: npm
-  email: oss@realglobe.jp
-  api_key:
-    secure: kft47Z4FVb8cBDQGaDx3ACgzI4/79+C2A+uIXGzjtKxGuB2QsiHghWczh3oD+pYGZCz9nlI1o++YPtbS6Ez2smuSWP0yjMu8nsZEHFpnz1JyaYzS/PsmRpXx85dsMUzUTs9SFkSmpVQpbI8henuXy2Myw5bJSiXj4qbR0f4OqUNpV5yPjlEeHY62CEypPGeFMdsp3+LZEHXaBnFHZ+PiBHX3D6gKMDgEJLZZ/EWTXr+tHLhl4+niLhkWEIpQlDeq09iMEQPEFhYUz8OtrUEBRG7baCKScjFGVhDXAbd5yPinDLaK302oD7sfnsyg6iBoJiWphDApbzn4B4n5weTrdv/JCgZAtCpsNdSIgJycQLCsmeQPAUhfYz6kHgWD5Vs44TMZgTxZbDRw0u47hwnrS1beN4oZQGynkaW04kkenXUWHueBiIhwzE9fZsnsFhI3DnWN1ot+jLkgJ6Z5PowUlAhVOnf8X1RFAS4IcXgIup6ZOQgvAdYuXOg7dapA1fLis3wzlj2Tdx1qdyeGpUVA86lZq8eKtSDC4ob474eMPnsv73rQt9YaWnOUz58z8scABE+wrVpalEnY36gZy9upQTJu/MsD2jQPqP6Z3Wp0+nUA143Aw1U/+91kNg5jiRWmtfIBVjaUnShsn0kL8FZFzURB6K2Hji+euXudsKElJsg=
+after_success:
+- publish-if-needed
+env:
+  global:
+    secure: X903UDnILNTxZ/PDK6aqjBNCfI8h85MYnoW5CtgggMN9GGA9JhzjYJrXMINHo9fTdfBgnBgC18PPjJb5y9IJiGs1I4GLns9jXzWvnj3pdTKB95hKRZ2S42K8tF3zW3qmRVPj+jO8jkhCERE/drHCJIg00tZfEhjsfUWdG4Y1NS2iheq86gJWqFS8K1BQ1HI5nL8VStIUXKVAiD2J23EaayAp56uH7+kAaKG1qHWN4JNiLDHiCoTXqA3AiaNCgRcAQ4FycJjlOvM7M9l9QxK0WPeSkYIbiSirUSTK6/H7r8RsvtyVZME/a7Accu4R97xpq2/+6t+c+ZAXA2QbbngJmuU4+n0blMuo2oOJK0BaS89Z+Dbh01hlCzLNPkra1XLmK7jSqV4fOSMLsiK66oBGAazKtulGv24rh3gCHjAUQbxdEdQQEcaZq4WFt6mJb8KhkuAYwuRuzuUwWpFxlrhMYirPz0hp11x1XhcX8VmkUA4gYdZ7bP4o5c/iwFJAv+oao02PVMwnrFwS8/ADNp2ak0R7XOR+vmQmqdNRBkmQTAGwjwKIMiohcflpZPKOxIAv2uUQ9RKKuKbbPv8kSY7l4WA/sh7rBhM4W4p1t+NxNBNUIXoP/nU+1mv1V1DYbYWENO0/VhVGl+d88dYBl/vhs4FH6MjThk7slBp7dH5q6Xs=
