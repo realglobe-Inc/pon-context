@@ -97,12 +97,12 @@ async function myCustomPonTask (ctx) {
 
 <!-- Section from "doc/guides/10.API Guide.md.hbs" Start -->
 
-<a name="section-doc-guides-10-a-p-i-guide-md"></a>
+<a name="section-doc-guides-10-api-guide-md"></a>
 
 API Guide
 -----
 
-+ [pon-context@3.0.3](./doc/api/api.md)
++ [pon-context@3.0.4](./doc/api/api.md)
   + [create(args)](./doc/api/api.md#pon-context-function-create)
   + [PonContext](./doc/api/api.md#pon-context-class)
 
