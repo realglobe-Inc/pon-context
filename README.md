@@ -102,7 +102,7 @@ async function myCustomPonTask (ctx) {
 API Guide
 -----
 
-+ [pon-context@3.0.4](./doc/api/api.md)
++ [pon-context@3.0.5](./doc/api/api.md)
   + [create(args)](./doc/api/api.md#pon-context-function-create)
   + [PonContext](./doc/api/api.md#pon-context-class)
 
